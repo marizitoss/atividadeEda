@@ -13,15 +13,15 @@ void randomizarNumeros(int vetor[]) {
 
 void selectionSort(int vetor[], int n, int crescente) {
   for (int i = 0; i < n - 1; i++) {
-    int i = i;
+    int min_idx = i;
     for (int j = i + 1; j < n; j++) {
-      if ((crescente && vetor[j] < vetor[i]) ||
-          (!crescente && vetor[j] > vetor[i])) {
-        i = j;
+      if ((crescente && vetor[j] < vetor[min_idx]) ||
+          (!crescente && vetor[j] > vetor[min_idx])) {
+        min_idx = j;
       }
     }
-    int temp = vetor[i];
-    vetor[i] = vetor[i];
+    int temp = vetor[min_idx];
+    vetor[min_idx] = vetor[i];
     vetor[i] = temp;
   }
 }
